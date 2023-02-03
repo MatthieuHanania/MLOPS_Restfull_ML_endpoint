@@ -9,11 +9,11 @@ pipeline{
       }    
     }
     
-    //Testing with the file model_test
+    //Do the unittest
     stage("Testing"){
       steps{
         echo 'testing'
-        bat' python -m model_test'
+        bat' python -m test_main.py'
       }
     }
     
