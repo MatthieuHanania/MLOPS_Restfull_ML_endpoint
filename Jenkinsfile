@@ -9,7 +9,13 @@ pipeline{
       }    
     }
     
+    //Testing with the file model_test
+    stage("Testing"){
+      steps{
+        echo 'testing'
+        bat' python -m model_test'
     
+    //stage to build and run the docker image
     stage("Docker Image"){
       steps{
         echo 'building docker image'
