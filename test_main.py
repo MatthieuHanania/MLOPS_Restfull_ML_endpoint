@@ -1,7 +1,7 @@
 import unittest
 import keras
 import pandas
-from app import app
+from app import *
 
 
 class FlaskTestCase(unittest.TestCase):
