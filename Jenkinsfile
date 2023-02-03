@@ -13,7 +13,7 @@ pipeline{
     stage("Testing"){
       steps{
         echo 'testing'
-        bat' python -m test_main.py'
+        bat' python -m test_main'
       }
     }
     
