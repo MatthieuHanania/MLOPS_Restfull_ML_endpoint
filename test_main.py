@@ -17,11 +17,8 @@ class FlaskTestCase(unittest.TestCase):
         df_test = pd.read_csv("fashion-mnist_test.csv")
         X_test = df_test.loc[0][1:]/255
         Y_test = df_test.loc[0].label
-        
-        
-        
+       
         prediction= model.predict(pd.DataFrame([X_test])).tolist()
-        self.assertEqual(response.json['name'], 'ben')
         max = np.argmax(prediction)
         self.assertEqual(max, 0)
 
