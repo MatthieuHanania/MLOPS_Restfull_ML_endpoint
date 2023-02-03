@@ -13,9 +13,9 @@ pipeline{
     stage("Docker Image"){
       steps{
         echo 'building docker image'
-        bat 'docker build -t RESTAPImage .'
+        bat 'docker build -t restapimage .'
         echo 'running the image'
-        bat 'docker run -p 5000:5000 -d RESTAPImage'
+        bat 'docker run -p 5000:5000 -d restapimage'
       }
     }
 
