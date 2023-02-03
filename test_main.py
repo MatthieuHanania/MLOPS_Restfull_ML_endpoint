@@ -18,7 +18,7 @@ class FlaskTestCase(unittest.TestCase):
         X_test = df_test.loc[0][1:]/255
         Y_test = df_test.loc[0].label
         
-        prediction= model.predict(X_test).tolist()
+        prediction= model.predict([X_test]).tolist()
         self.assertEqual(response.json['name'], 'ben')
         max = np.argmax(prediction)
         self.assertEqual(max, 0)
