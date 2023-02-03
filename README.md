@@ -42,6 +42,7 @@ This repo is composed of :
 - mnistModel.h5 : the model
 - model_creation.ipynb used to create the model
 - model_upgrage.ipynb improove the model with another dataset
+- model_test.ipynb to try the model on a choosen image
 - requirements.txt used to install all librairies
 - test_main.py the unittest file
 
@@ -75,3 +76,23 @@ So, when I try it on postman I get:
 And we can see on docker the prediction printed
 
 ![alt text](https://github.com/MatthieuHanania/TP7_MLOS_API/blob/main/pict/dockerPostRequest.png)
+
+
+To try the API, I also used the model_test file. the lines calles the API and display the results.
+```python
+ jsonToSent = [X_train.iloc[0].to_dict()] #the first image : a T shirt
+ 
+#Test the request
+URL = 'http://localhost:5000/classify'
+r = requests.post(URL, json = jsonToSent)
+r.json()
+```
+
+ Then I can compare is the prediction if the prediction is good or not on a test
+ ```python
+pred = np.argmax(r.json()['values'][0])
+if pred ==Y_train.loc[0]:
+    print("nice good pred !")
+```
+In our case, the model predict a T shirt
+![alt text](https://github.com/MatthieuHanania/TP7_MLOS_API/blob/main/pict/T%20shirt%20image.png)
