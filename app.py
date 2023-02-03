@@ -6,7 +6,7 @@ import pandas as pd
 
 app = Flask(__name__)
 
-model = keras.models.load_model('mnistModel')
+model = keras.models.load_model('mnistModel.h5')
 
 @app.route('/classify', methods=['POST'])
 def classify():
