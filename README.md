@@ -69,6 +69,9 @@ if __name__ =="__main__":
 ```
 
 So, when I try it on postman I get:
-![alt text](https://github.com/MatthieuHanania/TP7_MLOS_API/blob/main/pict/dockerPostRequest.png)
-And we can see on docker the prediction printed
+
 ![alt text](https://github.com/MatthieuHanania/TP7_MLOS_API/blob/main/pict/app%20on%20docker.png)
+
+And we can see on docker the prediction printed
+
+![alt text](https://github.com/MatthieuHanania/TP7_MLOS_API/blob/main/pict/dockerPostRequest.png)
