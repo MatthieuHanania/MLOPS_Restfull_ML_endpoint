@@ -44,3 +44,21 @@ This repo is composed of :
 - model_upgrage.ipynb improove the model with another dataset
 - requirements.txt used to install all librairies
 - test_main.py the unittest file
+
+I modify the app.py file before putting it on the docker image, now it print the type of the prediction ( the mnist dataset)
+```python
+class_names = ['T-shirt/top','Trouser','Pullover','Dress','Coat','Sandal','Shirt',
+               'Sneaker','Bag','Ankle boot']
+def classify():
+    image_data = request.get_json()
+    query = pd.DataFrame(image_data)
+    query = query/255
+    prediction = model.predict(query).tolist()
+    print(prediction)
+
+    max = np.argmax(prediction)
+    type = class_names[max]
+
+    dic={"Type":type,"values":prediction}
+    return dic
+```
