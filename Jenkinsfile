@@ -14,6 +14,7 @@ pipeline{
       steps{
         echo 'testing'
         bat' python -m model_test'
+      }
     
     //stage to build and run the docker image
     stage("Docker Image"){
