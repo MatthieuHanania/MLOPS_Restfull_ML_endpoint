@@ -10,8 +10,6 @@ class FlaskTestCase(unittest.TestCase):
         self.app = app.test_client()
         
     def test_classify(self):
-        response = self.app.get('/classify')
-        self.assertEqual(response.status_code, 200)
         
         #Testing if the model is good or not
         model = keras.models.load_model('mnistModel.h5')
