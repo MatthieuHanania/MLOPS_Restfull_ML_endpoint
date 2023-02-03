@@ -8,6 +8,9 @@ app = Flask(__name__)
 
 model = keras.models.load_model('mnistModel.h5')
 
+class_names = ['T-shirt/top','Trouser','Pullover','Dress','Coat','Sandal','Shirt',
+               'Sneaker','Bag','Ankle boot']
+
 @app.route('/classify', methods=['POST'])
 def classify():
     image_data = request.get_json()
@@ -15,8 +18,13 @@ def classify():
     query = query/255
     prediction = model.predict(query).tolist()
     print(prediction)
-    return prediction
+
+    max = np.argmax(prediction)
+    type = class_names[max]
+
+    dic={"Type":type,"values":prediction}
+    return dic
 
 if __name__ =="__main__":
-    app.run(host='0.0.0.0',debug=True)
+    app.run(debug=True)
 
