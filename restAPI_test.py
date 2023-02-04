@@ -3,6 +3,8 @@ import pandas as pd
 import numpy as np
 import requests
 import json
+import time
+
 
 #read csv
 df_test = pd.read_csv("fashion-mnist_test.csv")
@@ -13,6 +15,9 @@ X_train = df_test.drop("label",axis=1)
 
 #get the first line and pass it to a 
 jsonToSent = [X_train.iloc[0].to_dict()]
+
+#wait 30 seconde to let the docker be ready
+time.sleep(30)
 
 #Test the request
 URL = 'http://localhost:5000/classify'
