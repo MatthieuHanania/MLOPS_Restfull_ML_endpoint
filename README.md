@@ -45,6 +45,7 @@ This repo is composed of :
 - model_test.ipynb to try the model on a choosen image
 - requirements.txt used to install all librairies
 - test_main.py the unittest file
+- restAPI_test.py is a file executed by jenkins and it test the prediction of an image by calling the API
 
 I modify the app.py file before putting it on the docker image, now it print the type of the prediction ( the mnist dataset).
 And in order to connect postman with the docker container, we have to specify in the dockerfile, the port 5000:5000, and to put 0.0.0.0 in the app.py
