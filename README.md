@@ -32,6 +32,11 @@ The objective is to put the app.py file on docker.
 
 So I developp a dockerfile that execute the app.py file, used to get the POST API, and a jenkinsfile that build the docker image and run it.
 
+The Jenkinfile has 4 pipelines : 
+- Print hello word
+- Test the model by directly call it
+- Build a docker image and run it, the docker container contains the app.py file and it is possible to do an API request
+- testing the API request and test the model
 
 This repo is composed of : 
 
