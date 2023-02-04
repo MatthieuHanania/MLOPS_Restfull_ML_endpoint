@@ -9,8 +9,8 @@ pipeline{
       }    
     }
     
-    //Do the unittest
-    stage("Testing"){
+    //Do the unittest -> it calls the model
+    stage("Testing the model"){
       steps{
         echo 'testing'
         bat' python -m test_main'
@@ -27,6 +27,12 @@ pipeline{
       }
     }
 
+    stage("Testing the RESTAPI"){
+      steps{
+        echo 'testing the RESTAPI'
+        bat' python -m restAPI_test'
+      }
+    }
   }
 }
 
