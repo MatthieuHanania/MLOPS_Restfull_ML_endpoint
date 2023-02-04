@@ -79,7 +79,7 @@ And we can see on docker the prediction printed
 ![alt text](https://github.com/MatthieuHanania/TP7_MLOS_API/blob/main/pict/dockerPostRequest.png)
 
 
-To try the API, I also used the model_test file. the lines calles the API and display the results.
+To try the API on the docker file, I also used the model_test file. 
 ```python
  jsonToSent = [X_train.iloc[0].to_dict()] #the first image : a T shirt
  
@@ -97,3 +97,5 @@ if pred ==Y_train.loc[0]:
 ```
 In our case, the model predict a T shirt
 ![alt text](https://github.com/MatthieuHanania/TP7_MLOS_API/blob/main/pict/T%20shirt%20image.png)
+
+And finally, I create the restAPI_test.py that is called by the jenkinsfile to test the API and if the model is good or not.
