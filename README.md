@@ -1,5 +1,5 @@
 # TP7_MLOS_API
-the TP7 of MLOPS, I create a ml api
+I create a ml api
 
 
 Firsly, I train a Deep learning model using the mnist dataset. (model_creation.ipynb) and I saved the model (mnistModel)
